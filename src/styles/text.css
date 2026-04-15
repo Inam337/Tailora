@@ -1,0 +1,27 @@
+@layer base {
+  :root {
+    --color-text-primary: theme('colors.blue.600');
+    --color-text-success: theme('colors.green.600');
+    --color-text-warning: theme('colors.yellow.600');
+    --color-text-danger: theme('colors.red.600');
+    --color-text-muted: theme('colors.gray.300');
+  }
+}
+
+@layer components {
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+  .text-success {
+    color: var(--color-text-success);
+  }
+  .text-warning {
+    color: var(--color-text-warning);
+  }
+  .text-danger {
+    color: var(--color-text-danger);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+}

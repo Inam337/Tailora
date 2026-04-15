@@ -1,0 +1,24 @@
+
+@layer base {
+  :root {
+    --color-bg-body: #f6f6f6;
+    --color-bg-light: theme('colors.gray.50');
+    --color-bg-dark: theme('colors.gray.800');
+  }
+
+  body {
+    background-color: var(--color-bg-body);
+  }
+}
+
+@layer components {
+  .bg-body {
+    background-color: var(--color-bg-body);
+  }
+  .bg-light {
+    background-color: var(--color-bg-light);
+  }
+  .bg-dark {
+    background-color: var(--color-bg-dark);
+  }
+}

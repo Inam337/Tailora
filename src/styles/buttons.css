@@ -1,0 +1,41 @@
+@layer base {
+  :root {
+    --color-btn-primary: theme('colors.blue.400');
+    --color-btn-secondary: theme('colors.gray.400');
+    --color-btn-success: theme('colors.green.400');
+    --color-btn-warning: theme('colors.orange.400');
+    --color-btn-danger: theme('colors.red.400');
+    --color-btn-flat: theme('colors.gray.500');
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-3 py-1 rounded text-white font-light transition cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed active:scale-95 transform duration-100;
+  }
+
+  .btn-primary {
+    @apply disabled:bg-blue-400 hover:bg-blue-500;
+    background-color: var(--color-btn-primary);
+  }
+  .btn-secondary {
+    @apply disabled:bg-gray-400 hover:bg-gray-500;
+    background-color: var(--color-btn-secondary);
+  }
+  .btn-success {
+    @apply disabled:bg-green-400 hover:bg-green-500;
+    background-color: var(--color-btn-success);
+  }
+  .btn-warning {
+    @apply disabled:bg-orange-400 hover:bg-orange-500;
+    background-color: var(--color-btn-warning);
+  }
+  .btn-danger {
+    @apply disabled:bg-red-400 hover:bg-red-500;
+    background-color: var(--color-btn-danger);
+  }
+  .btn-flat {
+    @apply text-gray-500 hover:text-gray-800;
+    background-color: transparent;
+  }
+}
