@@ -1,9 +1,9 @@
-
 @layer base {
   :root {
     --color-bg-body: #f6f6f6;
-    --color-bg-light: theme('colors.gray.50');
-    --color-bg-dark: theme('colors.gray.800');
+    /* Match Tailwind grays so these work without theme() in a separate file */
+    --color-bg-light: #f9fafb;
+    --color-bg-dark: #1f2937;
   }
 
   body {

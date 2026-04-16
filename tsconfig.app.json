@@ -32,5 +32,14 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/pages/users",
+    "src/components/app/ApplicationInfo.tsx",
+    "src/components/app/AttachmentDisplay.tsx",
+    "src/components/app/FileUpload.tsx",
+    "src/components/ui/NotFound.tsx",
+    "src/components/ui/FileUpload.tsx",
+    "src/components/ui/FileMultipleUpload.tsx"
+  ]
 }

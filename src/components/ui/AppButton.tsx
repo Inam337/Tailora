@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
-import { ArrowPathIcon } from '@heroicons/react/24/outline';
+
+import { RbIcon } from '../icons/common/RbIcon';
+import { IconColors } from '@/components/icons/types/RbIcon.types';
 
 interface AppButtonProps {
   children: React.ReactNode;
@@ -32,7 +34,11 @@ export default function AppButton({
       {
         loading
           ? (
-              <ArrowPathIcon className="w-10 h-5 animate-spin" />
+              <RbIcon
+                name="arrowChevronRight"
+                size={16}
+                color={IconColors.PRIMARY_COLOR_ICON}
+              />
             )
           : (
               children

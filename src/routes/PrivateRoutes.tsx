@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import { useAuthStore } from '@/stores/auth';
 import { AppConstants } from '@/common/AppConstants';
@@ -8,11 +8,7 @@ export default function PrivateRoutes() {
   const isAuthenticated = useAuthStore(state => state.token != null);
 
   return isAuthenticated
-    ? (
-        <LayoutPrivate>
-          <Outlet />
-        </LayoutPrivate>
-      )
+    ? <LayoutPrivate />
     : (
         <Navigate
           to={AppConstants.Routes.Public.Login}

@@ -1,13 +1,11 @@
-import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-interface LayoutPrivateProps {
-  children: React.ReactNode;
-}
+import MainLayout from '@/components/layouts/MainLayout';
 
-export default function LayoutPrivate({ children }: LayoutPrivateProps) {
+export default function LayoutPrivate() {
   return (
-    <div className="p-5">
-      {children}
-    </div>
+    <MainLayout>
+      <Outlet />
+    </MainLayout>
   );
 }

@@ -1,16 +1,20 @@
 @layer base {
   :root {
-    --color-text-primary: theme('colors.blue.600');
-    --color-text-success: theme('colors.green.600');
-    --color-text-warning: theme('colors.yellow.600');
-    --color-text-danger: theme('colors.red.600');
-    --color-text-muted: theme('colors.gray.300');
+    --color-text-app-primary: #2563eb;
+    --color-text-success: #16a34a;
+    --color-text-warning: #ca8a04;
+    --color-text-danger: #dc2626;
+    --color-text-muted: #9ca3af;
   }
 }
 
+/*
+  Do not use the class name .text-primary — it overrides Tailwind's text-primary
+  theme utility used by Button, links, and inputs.
+*/
 @layer components {
-  .text-primary {
-    color: var(--color-text-primary);
+  .text-app-primary {
+    color: var(--color-text-app-primary);
   }
   .text-success {
     color: var(--color-text-success);

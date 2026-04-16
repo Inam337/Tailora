@@ -25,15 +25,22 @@ const radiusClassMap = {
 
 export default function Card({
   children,
-  radius = 'sm',
-  shadow = 'sm',
+  radius = 'lg',
+  shadow = 'lg',
   className,
 }: CardProps) {
   const radiusClass = radiusClassMap[radius];
   const shadowClass = shadow ? shadowClassMap[shadow] : '';
 
   return (
-    <div className={clsx('bg-light', radiusClass, shadowClass, 'p-[2rem]', className)}>
+    <div className={clsx(
+      'bg-light',
+      'text-foreground border border-gray-200',
+      radiusClass,
+      shadowClass,
+      className,
+    )}
+    >
       {children}
     </div>
   );
@@ -41,7 +48,9 @@ export default function Card({
 
 const Title = ({ children }: { children: React.ReactNode }) => (
   <section className="mb-4">
-    <h2 className="text-xl text-center">{children}</h2>
+    <h2 className="text-xl text-center text-foreground">
+      {children}
+    </h2>
   </section>
 );
 

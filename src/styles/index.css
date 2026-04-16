@@ -5,6 +5,35 @@
 @import "./buttons.css";
 @import "./text.css";
 
+/*
+  Semantic colors for shadcn-style components (Button, Input, links).
+  Without these, utilities like bg-primary / text-primary generate no usable color.
+*/
 @theme {
-  --font-sans: "Open Sans", sans-serif;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+
+  --color-primary: #2563eb;
+  --color-primary-foreground: #ffffff;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+
+  --color-secondary: #f3f4f6;
+  --color-secondary-foreground: #111827;
+
+  --color-accent: #eff6ff;
+  --color-accent-foreground: #1e40af;
+
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+
+  --color-ring: #2563eb;
+
+  --radius-md: 0.375rem;
 }

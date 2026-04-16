@@ -1,16 +1,18 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-import { login } from '@/services/auth';
+import { login as loginRequest } from '@/services/auth';
 
 interface AuthState {
-  token: string;
+  token: string | null;
+  userEmail: string | null;
   login: (email: string, password: string) => Promise<boolean>;
   logout: () => void;
 }
 
 const initialState = {
-  token: null,
+  token: null as string | null,
+  userEmail: null as string | null,
 };
 
 export const useAuthStore = create<AuthState>()(
@@ -18,15 +20,15 @@ export const useAuthStore = create<AuthState>()(
     set => ({
       ...initialState,
       login: async (email: string, password: string) => {
-        const response = await login(email, password);
+        const response = await loginRequest(email, password);
 
         if (response) {
-          set({ token: response.access_token });
+          set({ token: response.access_token, userEmail: email });
 
           return true;
-        } else {
-          return false;
         }
+
+        return false;
       },
       logout: () => {
         set(initialState);
@@ -36,6 +38,7 @@ export const useAuthStore = create<AuthState>()(
       name: 'store-auth',
       partialize: state => ({
         token: state.token,
+        userEmail: state.userEmail,
       }),
     },
   ),
